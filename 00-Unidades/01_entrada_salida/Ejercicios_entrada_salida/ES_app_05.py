@@ -41,19 +41,19 @@ class App(customtkinter.CTk):
 
     def btn_mostrar_on_click(self):
         
-        nombre_obtenido = self.txt_nombre.get()
+        nombre= self.txt_nombre.get()
+        
+        edad=  self.txt_edad.get()
+        
+        message = "ustes de llama {} y su edad es de {} años"
 
-        edad_obtenida = self.txt_edad.get()
-
-        print(nombre_obtenido)
-        print(edad_obtenida)
-
-        alert (None, message= "Usted se llama {} y su edad es {} años")
-
-        mensaje = "Hola, {}! ¿Cómo estás, {}?"
+        message_modified = message.format(nombre, edad)
+        
+        alert(None , message_modified)
 
 
-        mensaje_formateado = mensaje.format(nombre_obtenido, edad_obtenida)
+        
+        
 
 
 
