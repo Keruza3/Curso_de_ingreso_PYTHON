@@ -41,15 +41,17 @@ class App(customtkinter.CTk):
 
     def btn_mostrar_on_click(self):
         
-        nombre= self.txt_nombre.get()
+        nombre_registrado = self.txt_nombre.get() 
         
-        edad=  self.txt_edad.get()
+        edad_registrada = self.txt_edad.get()
         
-        message = "ustes de llama {} y su edad es de {} años"
+        alert( "UTN FRA", "ustes de llama "+ nombre_registrado + " y su edad es de " + edad_registrada + " años") #el + sirve para concatenar datos (es decir juntar varios datos y ponerlos en un mismo lugar)
 
-        message_modified = message.format(nombre, edad)
-        
-        alert(None , message_modified)
+        self.txt_nombre.delete(0 , 100)
+
+        self.txt_edad.delete(0 , 100)
+
+
 
 
         

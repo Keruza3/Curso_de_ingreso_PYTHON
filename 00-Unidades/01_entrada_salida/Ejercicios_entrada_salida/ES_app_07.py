@@ -5,8 +5,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre: Juan Ignacio 
+apellido: Ullua
 ---
 Ejercicio: entrada_salida_07
 ---
@@ -47,18 +47,72 @@ class App(customtkinter.CTk):
 
         self.btn_dividir = customtkinter.CTkButton(master=self, text="Dividir", command=self.btn_dividir_on_click)
         self.btn_dividir.grid(row=5, pady=10, columnspan=2, sticky="nsew")
-
+        
+        
     def btn_sumar_on_click(self):
-        pass
+        
+        operador_a = int(self.txt_operador_a.get())
+       
+        operador_b = int(self.txt_operador_b.get())
+       
+        resultado_suma = str(operador_a + operador_b)
+       
+        alert("calculadora" , "El resultado de la suma es: " +resultado_suma)
 
+        self.txt_operador_a.delete(0 , 100)
+
+        self.txt_operador_b.delete(0 , 100)
+       
     def btn_restar_on_click(self):
-        pass
+        operador_a = int(self.txt_operador_a.get())
+        
+        operador_b = int(self.txt_operador_b.get())
+        
+        resultado_resta = str(operador_a - operador_b)
+       
+        alert("Calculadora" , "El resultado de la resta es: " + resultado_resta)
 
+        self.txt_operador_a.delete(0 , 100)
+
+        self.txt_operador_b.delete(0 , 100)
+        
     def btn_multiplicar_on_click(self):
-        pass
+      
+        operador_a = int(self.txt_operador_a.get())
+        
+        operador_b = int(self.txt_operador_b.get())
 
+        resultado_multiplicaion = str(operador_a * operador_b)
+
+        alert("Calculadora" , "el resultado de la multiplicacion es: " + resultado_multiplicaion)
+
+        self.txt_operador_a.delete(0 , 100)
+
+        self.txt_operador_b.delete(0 , 100)
+
+        
+
+
+    
     def btn_dividir_on_click(self):
-        pass
+         
+        operador_a = int(self.txt_operador_a.get())
+
+        operador_b = int(self.txt_operador_b.get())
+
+        resultado_division = str(operador_a / operador_b)
+     
+        alert("Calculadora" , "El resultado de la division es: " + resultado_division)
+
+        self.txt_operador_a.delete(0 , 100)
+
+        self.txt_operador_b.delete(0 , 100)
+
+    
+
+   
+
+     
         
 if __name__ == "__main__":
     app = App()
