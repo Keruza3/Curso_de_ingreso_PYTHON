@@ -45,7 +45,7 @@ class App(customtkinter.CTk):
 
         sueldo_final= str(sueldo_final)
         
-        alert ("ejercicio 9" , "El suelo final es de $" + sueldo_final)
+        alert ("ejercicio 9" , "El suelo final con un aumento del 15 % es de $" + sueldo_final)
         
     
 if __name__ == "__main__":

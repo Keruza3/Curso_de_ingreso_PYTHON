@@ -48,7 +48,7 @@ class App(customtkinter.CTk):
 
         sueldo_final = str(resultado_porcentaje + sueldo_obtenido)
         
-        alert("Ejercicio 9" , "Su sueldo aumento un " + str(porcentaje_obtenido) + " % quedando en $" + sueldo_final)
+        alert("Ejercicio 9 bis" , "Su sueldo aumento un " + str(porcentaje_obtenido) + " % quedando en $" + sueldo_final)
 
 
     

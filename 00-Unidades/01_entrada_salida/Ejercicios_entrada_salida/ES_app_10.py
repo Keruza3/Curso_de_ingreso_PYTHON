@@ -34,7 +34,18 @@ class App(customtkinter.CTk):
         self.btn_mostrar.grid(row=2, pady=20, padx=30, columnspan=2, sticky="nsew")
 
     def btn_mostrar_on_click(self):
-        pass
+        
+        sueldo_obtenido = float(self.txt_importe.get())
+
+        porcentaje = (sueldo_obtenido * 20)/100
+
+        sueldo_final = str(sueldo_obtenido - porcentaje )
+
+        alert("Ejercicio 10" , "El sueldo final con un  20 % menos es: $" + sueldo_final)
+
+
+
+        
 
 
 if __name__ == "__main__":
