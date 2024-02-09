@@ -5,8 +5,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre: Juan Ignacio 
+apellido: Ullua
 ---
 TP: ES_Facturaciones
 ---
@@ -52,14 +52,76 @@ class App(customtkinter.CTk):
         self.btn_total_iva.grid(row=5, pady=10, columnspan=2, sticky="nsew")
 
     def btn_total_on_click(self):
-        pass
+        
+        precio_1 = float(self.txt_importe_1.get())
+
+        precio_2 = float(self.txt_importe_2.get())
+
+        precio_3 = float(self.txt_importe_3.get())
+
+        resultado_suma = str(precio_1 + precio_2 + precio_3)
+
+        alert("TP facturacion" , "La suma de los tres productos es de $" + resultado_suma)
+
+        self.txt_importe_1.delete(0 , 100)
+
+        self.txt_importe_2.delete(0 , 100)
+        
+        self.txt_importe_3.delete(0 , 100)
+
+
+    
 
     def btn_promedio_on_click(self):
-        pass
+        
+        precio_1 = int(self.txt_importe_1.get())
+
+        precio_2 = int(self.txt_importe_2.get())
+
+        precio_3 = int(self.txt_importe_3.get())
+
+        resultado_promedio = (precio_1 + precio_2 + precio_3)/3
+
+
+        resultado_promedio = str(resultado_promedio)
+
+        alert("TP facturacion" , "El promedio de los productos es de un " + resultado_promedio)
+
+        self.txt_importe_1.delete(0 , 100)
+
+        self.txt_importe_2.delete(0 , 100)
+        
+        self.txt_importe_3.delete(0 , 100)
 
     def btn_total_iva_on_click(self):
-        pass      
-    
+            
+        precio_1 = float(self.txt_importe_1.get())
+
+        precio_2 = float(self.txt_importe_2.get())
+
+        precio_3 = float(self.txt_importe_3.get())
+
+        suma_de_productos = (precio_1 + precio_2 + precio_3)
+
+        resultado_IVA = (suma_de_productos * 21)/100
+
+        resultado_final = suma_de_productos + resultado_IVA
+        
+        resultado_final =  str(resultado_final)
+        
+        alert("Tp facturacion" , "El precio total con el IVA es de $" + resultado_final)
+
+        self.txt_importe_1.delete(0 , 100)
+
+        self.txt_importe_2.delete(0 , 100)
+        
+        self.txt_importe_3.delete(0 , 100)
+
+
+
+
+
+
 if __name__ == "__main__":
     app = App()
     app.geometry("300x300")
