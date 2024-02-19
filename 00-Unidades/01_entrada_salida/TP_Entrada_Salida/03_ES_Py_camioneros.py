@@ -55,36 +55,39 @@ class App(customtkinter.CTk):
     
     def btn_cantidad_camiones_on_click(self):
       
-      toneladas = float(self.txt_toneladas.get())
+      toneladas = (self.txt_toneladas.get())
+
+      toneladas = float(toneladas)
       
       kilos = (toneladas * 1000)
 
-      kilos_para_abajo = math.floor(kilos)
+      camiones = (kilos / 3500)
 
-      camiones = (kilos_para_abajo / 3500)
+      camiones = math.ceil(camiones)
 
-      camiones = round(camiones)
-
-
-
-     
-
+      mensaje = f"Para la cantidad de: {toneladas} toneladas, va a necesitar  {camiones} camiones"
       
-      alert ("TP Camioneros" , "Para la cantidad de: " + str(toneladas) + " toneladas, va a necesitar " + str(camiones) + " camiones")
+      alert ("TP Camioneros" , mensaje)
 
       
 
 
     def btn_tiempo_llegada_on_click(self):
       
-      kilometros = float(self.txt_kilometros.get())
+      kilometros = (self.txt_kilometros.get())
 
-      horas = (kilometros / 90)
+      kilometros = float(kilometros)
 
-      horas = round(horas)
-      
-      alert("TP Camioneros" , "El recorrido de: " + str(kilometros) + " km va a tardar " + str(horas) + " horas") 
+      horas_parte_entera = (kilometros // 90)
 
+      minutos = (kilometros % 90 ) 
+
+      mensaje = f"El recorrido de: {kilometros}  km va a tardar {horas_parte_entera} horas y  {minutos}   Minutos" #:.0f para poner solo tantos decimales como yo quiera
+    
+      alert("TP Camioneros" , mensaje)
+
+# // te devuelve la parte entera de una divsion
+# % te devuelve el resto
 
     
     

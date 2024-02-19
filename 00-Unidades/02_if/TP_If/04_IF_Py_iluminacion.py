@@ -5,8 +5,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre: Juan Ignacio 
+apellido: Ullua
 ---
 TP: IF_Iluminacion
 ---
@@ -43,9 +43,78 @@ class App(customtkinter.CTk):
 
 
     def btn_calcular_on_click(self):
-        pass
         
-    
+        lamparas = self.combobox_cantidad.get()
+
+        lamparas = int(lamparas)    
+
+        marca = self.combobox_marca.get()
+
+
+        if lamparas >= 6:
+            
+            descuento = 50
+
+            # caso b
+            if lamparas == 5:
+                 if marca == "ArgentinaLuz":
+                    
+                    descuento = 40
+
+                 else:
+                     
+                     descuento = 30 
+            
+            # caso c
+            if lamparas == 4:
+                
+                if marca == "ArgentinaLuz" or  marca == "FelipeLamparas":
+
+                        descuento = 25
+                else:
+                    
+                        descuento = 20
+
+            
+            #caso d
+                    
+            if lamparas == 3:
+                
+                    if marca == "ArgentinaLuz":
+                    
+                        descuento = 10
+                    else:
+                
+                        if marca == "FelipeLamparas":
+                        
+                            descuento = 10
+                        else:
+
+                            descuento = 5
+        else:
+            descuento = 0
+
+        importe_lamparas_precio = lamparas * 800
+        importe_lamparas_descuento = (importe_lamparas_precio * descuento) / 100
+        descuento_final = importe_lamparas_precio - importe_lamparas_descuento
+          #caso e            
+        if descuento_final >= 4000:
+                
+                descuento = 5
+                importe_lamparas_descuento = (importe_lamparas_precio * descuento) / 100
+                descuento_final = importe_lamparas_precio - importe_lamparas_descuento
+            
+
+        mensaje =  f"""El precio final de porducto es de: 
+                                    cantidad: {lamparas}
+                                    Precio: ${importe_lamparas_precio}
+                                    Descuento: {descuento}%
+                                    Cantidad descuento: ${importe_lamparas_descuento}
+                                    ---------------------------------
+                                    Precio final: ${descuento_final}"""
+
+        alert ("TP if Iluminacion" , mensaje)
+
 if __name__ == "__main__":
     app = App()
     app.geometry("300x300")

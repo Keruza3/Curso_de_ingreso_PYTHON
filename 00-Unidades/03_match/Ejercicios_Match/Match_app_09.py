@@ -6,8 +6,8 @@ import customtkinter
 
 
 '''
-nombre:
-apellido:
+nombre: Juan Ignacio
+apellido: ullua
 ---
 Ejercicio: Match_09
 ---
@@ -57,10 +57,61 @@ class App(customtkinter.CTk):
         
     
     def btn_informar_on_click(self):
-        pass
+
+                estacion = self.combobox_estaciones.get()
+
+                destino = self.combobox_destino.get()
+                
+                match estacion:
+                
+                 case "Invierno":
+                                match destino:
+                                        case "Bariloche":
+                                                aumento = 20
+
+                                        case "Mar del Plata":
+                                                descuento = 20
+                        
+                                        case _:
+                                                descuento = 10
+
+                 case "Verano":
+                    
+                                match destino:
+                                        case "Bariloche":    
+                                                descuento = 10
+                          
+                                        case "Mar del plata":
+                                                aumento = 20
+                          
+                                        case _:
+                                                aumento = 10 
+                
+                 case _:
+                        if destino != "Cordoba":
+                               aumento = 10
+
+                precio_final = 15000 + (15000 * aumento /100) - (15000 * descuento / 100)
+        
+                mensaje = f"El destino de {destino} en la estacion de {estacion} tiene un precio de $ {precio_final} pesos"
+                
+                alert("Ejercicio 9 match" , mensaje)
+
+                 
+
+
+        
+            
+                
+                
+
+      
+        
+        
+      
             
     
 if __name__ == "__main__":
-    app = App()
-    app.geometry("300x300")
-    app.mainloop()
+        app = App()
+        app.geometry("300x300")
+        app.mainloop()

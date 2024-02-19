@@ -1,3 +1,4 @@
+import struct
 import tkinter
 from tkinter.messagebox import showinfo as alert
 from tkinter.messagebox import askyesno as question
@@ -5,8 +6,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre: Juan Ignacio 
+apellido: Ullua
 ---
 Ejercicio: if_08
 ---
@@ -40,10 +41,32 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+        
+        edad = self.txt_edad.get()
+
+        edad = int(edad)
+
+        estado = self.combobox_estado_civil.get()
+
+        if estado =="Soltero" and edad >=18:
+            mensaje = "Es soltero y no es menor"
+
+        alert("Ejercicio 8 if" , mensaje)
+
+
 
         
+
         
+'''
+
+Ejercicio: if_08
+---
+Enunciado:
+Al ingresar una edad menor a 18 años y un estado civil distinto a "Soltero", NO HACER NADA,
+pero si no es asi, y es soltero y no es menor, mostrar el siguiente mensaje: 'Es soltero y no
+es menor.'
+'''
     
 if __name__ == "__main__":
     app = App()

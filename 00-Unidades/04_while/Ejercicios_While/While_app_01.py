@@ -29,7 +29,14 @@ class App(customtkinter.CTk):
         
     
     def btn_mostrar_iteracion_on_click(self):
-        pass
+        
+        contador = 1
+
+        while contador <=10:
+        
+            alert("Ej 1 match" , contador)
+
+            contador = contador + 1
     
     
 if __name__ == "__main__":
