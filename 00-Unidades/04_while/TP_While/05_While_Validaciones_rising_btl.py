@@ -5,8 +5,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre: Juan Ignacio
+apellido: Ullua
 ---
 TP: While_validaciones_rising_btl
 ---
@@ -20,7 +20,6 @@ Los datos requeridos son los siguientes:
     Estado civil, ["Soltero/a", "Casado/a", "Divorciado/a", "Viudo/a"]
     Número de legajo, numérico de 4 cifras, sin ceros a la izquierda.
 '''
-
 
 class App(customtkinter.CTk):
 
@@ -54,8 +53,81 @@ class App(customtkinter.CTk):
             master=self, text="Validar", command=self.btn_validar_on_click)
         self.btn_validar.grid(row=4, pady=20, columnspan=2, sticky="nsew")
 
+
+   
     def btn_validar_on_click(self):
-        pass
+        
+        bandera_estado_civil = False
+        
+        apellido = prompt("apellido" , "Ingrese su apellido:")
+        
+        while apellido == "":
+                
+                apellido = prompt("apellido" , "Ingrese su apellido:")
+                
+                
+        while apellido == None:
+            
+            apellido = prompt("apellido" , "Ingrese su apellido:")
+            
+        
+        edad = prompt("Edad" , "Ingrese su edad:")
+
+        while edad == "" or edad == None:
+            
+             edad = prompt("Edad" , "Ingrese su edad:")
+        
+        edad = int(edad)
+
+        while edad <18 or edad >90:
+            
+            edad = prompt("Edad" , "Ingrese su edad entre un rango de 18 y 90 años")
+
+            edad = int(edad)
+
+        estado_civil = prompt("Estado civil" , "Ingrese su estado civil:")
+
+        while estado_civil == "" or estado_civil == None:
+             
+             estado_civil = prompt("Estado civil" , """Ingrese su estado civil con :["Soltero/a", "Casado/a", "Divorciado/a", "Viudo/a"]""")
+        
+
+        
+        estado_civil = estado_civil.lower
+        
+        match estado_civil:
+             
+             case "soltero " | "soltera" | "casado" | "casada" | "divorciado" | "vivorciada" | "viudo" | "viuda":
+                
+                if bandera_estado_civil == False:
+                     
+
+        numero_de_legajo = prompt("Legajo" , "Ingrese su numero de legajo:")
+
+        numero_de_legajo = int(numero_de_legajo)
+
+        while numero_de_legajo <= 1000 or numero_de_legajo >=9999:
+
+            numero_de_legajo = prompt("Legajo" , "Ingrese su numero de legajo: (Tiene que ser de 4 cifras y sin 0 al principio)")
+
+        self.txt_apellido.insert(0 , apellido)
+        self.txt_edad.insert(0 , edad)
+        #self.combobox_tipo.
+        self.txt_legajo.insert(0 , numero_de_legajo)
+
+    
+
+    
+
+'''
+Rising BTL. Empresa dedicada a la toma de datos para realizar estadísticas y censos nos pide realizar una carga de datos validada e ingresada 
+por ventanas emergentes solamente (para evitar hacking y cargas maliciosas) y luego asignarla a cuadros de textos.
+    Apellido
+    Edad, entre 18 y 90 años inclusive.
+    Estado civil, ["Soltero/a", "Casado/a", "Divorciado/a", "Viudo/a"]
+    Número de legajo, numérico de 4 cifras, sin ceros a la izquierda.
+'''
+
 
 
 if __name__ == "__main__":
