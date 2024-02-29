@@ -85,51 +85,48 @@ class App(customtkinter.CTk):
 
             edad = int(edad)
 
-        estado_civil = prompt("Estado civil" , "Ingrese su estado civil:")
+        
+        while not bandera_estado_civil:
+            estado_civil = prompt("Estado civil", "Ingrese su estado civil:")
 
-        while estado_civil == "" or estado_civil == None:
-             
-             estado_civil = prompt("Estado civil" , """Ingrese su estado civil con :["Soltero/a", "Casado/a", "Divorciado/a", "Viudo/a"]""")
-        
+            if estado_civil == "" or estado_civil is None:
+                continue
 
-        
-        estado_civil = estado_civil.lower
-        
-        match estado_civil:
-             
-             case "soltero " | "soltera" | "casado" | "casada" | "divorciado" | "vivorciada" | "viudo" | "viuda":
+            estado_civil = estado_civil.lower()
+
+            match estado_civil:
+                case "soltero" | "soltera" | "casado" | "casada" | "divorciado" | "divorciada" | "viudo" | "viuda":
+                    bandera_estado_civil = True
+
+                case _:
                 
-                if bandera_estado_civil == False:
-                     
+                    continue
+                 
+            
+                
+            numero_de_legajo = prompt("Legajo" , "Ingrese su numero de legajo:")
 
-        numero_de_legajo = prompt("Legajo" , "Ingrese su numero de legajo:")
+            while numero_de_legajo == "" or numero_de_legajo == None:
+                continue
 
-        numero_de_legajo = int(numero_de_legajo)
+            numero_de_legajo = int(numero_de_legajo)
 
-        while numero_de_legajo <= 1000 or numero_de_legajo >=9999:
+            while numero_de_legajo <= 1000 or numero_de_legajo >=9999:
 
-            numero_de_legajo = prompt("Legajo" , "Ingrese su numero de legajo: (Tiene que ser de 4 cifras y sin 0 al principio)")
+                numero_de_legajo = prompt("Legajo" , "Ingrese su numero de legajo: (Tiene que ser de 4 cifras y sin 0 al principio)")
 
+                numero_de_legajo = int(numero_de_legajo)
+
+        
+        self.txt_apellido.delete(0 , customtkinter.END)
+        self.txt_edad.delete(0 , customtkinter.END)
+        self.txt_legajo.delete(0 , customtkinter.END)
+        
         self.txt_apellido.insert(0 , apellido)
         self.txt_edad.insert(0 , edad)
-        #self.combobox_tipo.
+        self.combobox_tipo.set(estado_civil)
         self.txt_legajo.insert(0 , numero_de_legajo)
-
-    
-
-    
-
-'''
-Rising BTL. Empresa dedicada a la toma de datos para realizar estadísticas y censos nos pide realizar una carga de datos validada e ingresada 
-por ventanas emergentes solamente (para evitar hacking y cargas maliciosas) y luego asignarla a cuadros de textos.
-    Apellido
-    Edad, entre 18 y 90 años inclusive.
-    Estado civil, ["Soltero/a", "Casado/a", "Divorciado/a", "Viudo/a"]
-    Número de legajo, numérico de 4 cifras, sin ceros a la izquierda.
-'''
-
-
-
+ 
 if __name__ == "__main__":
     app = App()
     app.geometry("300x300")

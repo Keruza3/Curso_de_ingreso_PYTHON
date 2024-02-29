@@ -5,8 +5,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre: Juan Ignacio
+apellido: Ullua 
 ---
 TP: While_elecciones_paso
 ---
@@ -35,7 +35,28 @@ class App(customtkinter.CTk):
         self.btn_validar.grid(row=4, pady=20, columnspan=2, sticky="nsew")
 
     def btn_validar_on_click(self):
-        pass
+        
+        
+        while True:
+            nombre = prompt("TP: While_elecciones_paso" , "Ingrese el nombre del candidato")
+            if nombre != None or nombre != "":
+                continue
+            
+            else:  
+            
+            edad = prompt("TP: While_elecciones_paso" , "Ingrese la edad")
+            edad = int(edad)
+        
+        while edad <= 25:
+            edad = prompt("TP: While_elecciones_paso" , "Ingrese la edad")
+
+        
+        
+        
+        cantidad_de_votos_ingresados = prompt()
+
+        
+
 
 
 if __name__ == "__main__":

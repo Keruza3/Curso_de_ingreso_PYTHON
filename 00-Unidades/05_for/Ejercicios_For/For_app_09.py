@@ -3,7 +3,7 @@ from tkinter.messagebox import showinfo as alert
 from tkinter.messagebox import askyesno as question
 from tkinter.simpledialog import askstring as prompt
 import customtkinter
-
+import random
 '''
 nombre:
 apellido:
@@ -37,7 +37,46 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+        numero_random = random.randint(0 , 100)
+        
+
+        for contador in range(1 , 7+1):
+            numero_ingresado = prompt("Ej 9 for" , "Adivine el numero")
+            numero_ingresado = int(numero_ingresado)
+
+            if numero_ingresado > numero_random:
+                mensaje = "Se pasó…"
+            else:
+                mensaje = "Falta…"
+            
+            match contador:
+                case 1:
+                    if numero_ingresado == numero_random:
+                        mensaje = "Usted es un psíquico"
+                  
+                case 2:
+                    if numero_ingresado == numero_random:
+                        mensaje = "Excelente percepción"
+                  
+                case 3: 
+                    if numero_ingresado == numero_random:
+                        mensaje = "Esto es suerte"
+                    
+                case 4 | 5 | 6:
+                    if numero_ingresado == numero_random:
+                        mensaje = "Excelente técnica"
+                  
+                case 7:
+                    if numero_ingresado != numero_random:
+                        mensaje = "Perdiste, suerte para la próxima"
+                    else:
+                        mensaje = "Adivinaste en el ultimo intento"
+                
+            
+            
+            alert("Ej 9 for" , mensaje)
+    
+    
                 
 
     

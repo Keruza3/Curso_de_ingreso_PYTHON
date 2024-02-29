@@ -13,7 +13,7 @@ apellido:
 Ejercicio: for_01
 ---
 Enunciado:
-Al presionar el botón Mostrar 5 veces un mensaje (utilizando el Dialog Alert) con números ASCENDENTES, desde el 1 al 5.
+Al presionar el botón Mostrar, 5 veces un mensaje (utilizando el Dialog Alert) con números ASCENDENTES, desde el 1 al 5.
 '''
 
 class App(customtkinter.CTk):
@@ -28,7 +28,9 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass 
+        
+        for numero in range(1 , 6):
+            alert("ej 1 for" , numero)
        
             
 

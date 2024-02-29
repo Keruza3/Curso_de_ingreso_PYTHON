@@ -31,18 +31,15 @@ class App(customtkinter.CTk):
     
     def btn_validar_letra_on_click(self):
         
-        letra_ingresada_mayuscula= prompt("ej 5 while" , "Ingrese una letra")
-
-        letra_ingresada_mayuscula = "U"
-        letra_ingresada_mayuscula = "T"
-        letra_ingresada_mayuscula = "N"
-
-        while letra_ingresada_mayuscula != "U" or letra_ingresada_mayuscula != "T" or letra_ingresada_mayuscula != "N":
-           letra_ingresada_mayuscula = prompt("ej 5 while" , "Ingrese una letra nuevamente")
-           letra_ingresada_mayuscula = letra_ingresada_mayuscula.upper()
-           
+       while True:
+        letra = prompt("", "Ingrese letra")
+        letra = letra.upper()
+        if letra != "U" and letra != "T" and letra != "N":
+           letra = prompt("", "Ingrese letra")
+        else:
+           break
         
-        alert("ej 5 while" , "Letra ingresada correctamente")
+       
 
 
             

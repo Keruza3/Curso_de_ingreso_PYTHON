@@ -27,9 +27,37 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
         
-    
+        numero = prompt("Ej 6" , "Ingrese un numero")
+        numero = int(numero)
+        contador_div = 0
+
+        for contador in range(1 , numero+1):
+            if numero % contador == 0:
+                print(contador)
+                contador_div += 1
+            print(contador_div)
+            
+
+
+        
+        
+        
+        
+        
+        """
+        for numero in range (numero):
+            
+            numero = numero / 2
+
+            print(numero)
+        """
+            
+            
+            
+            
+
+
 if __name__ == "__main__":
     app = App()
     app.geometry("300x300")

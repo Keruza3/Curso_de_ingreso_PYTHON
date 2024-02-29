@@ -32,9 +32,17 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
-
         
+        repeticiones = self.txt_repetir.get()
+        repeticiones = int(repeticiones)
+        #contador = 0
+
+        for _ in range(repeticiones):
+
+            #contador += 1
+            #print(contador)
+            alert("ej 3 for" , "Hola UTN FRA")
+
     
 if __name__ == "__main__":
     app = App()

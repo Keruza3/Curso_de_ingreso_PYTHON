@@ -49,11 +49,11 @@ class App(customtkinter.CTk):
 
             numero_ingresado = prompt("ej 7 while" , "Ingrese los numeros")
 
-            if numero_ingresado == None:
+            if numero_ingresado == None:        
                 break
             
         
-            contador += 1
+            contador = + 1
             numero_ingresado = int(numero_ingresado)
             suma_numeros = suma_numeros + numero_ingresado
         

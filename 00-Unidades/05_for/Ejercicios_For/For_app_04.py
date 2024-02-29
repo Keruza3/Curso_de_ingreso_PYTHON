@@ -26,8 +26,17 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
-        
+         
+        #contador = 0
+
+        for numero in range(0 , 10):
+            numero = prompt("" , "Ingrese 10 valores")
+            numero = int(numero)
+            if numero == 9:
+             break
+           
+           #contador += 1
+           #print(contador)
     
 if __name__ == "__main__":
     app = App()

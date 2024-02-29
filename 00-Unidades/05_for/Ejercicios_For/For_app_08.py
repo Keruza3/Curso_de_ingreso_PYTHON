@@ -5,7 +5,7 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
+nombre: 
 apellido:
 ---
 Ejercicio: for_08
@@ -26,8 +26,40 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
-    
+        numero_ingresado = prompt("Ej 8 for" , "Ingrese el numero deseado")
+        numero_ingresado = int(numero_ingresado)
+        
+        contador_3 = 0
+        contador_2 = 0
+        for contador in range(1 , numero_ingresado+1):
+            contador_3 = 0
+            for _ in range(1, contador+1):
+                if contador % _ == 0:
+                    contador_3 += 1
+            if contador_3 < 3:
+                    contador_2+= 1
+                    print(contador)
+        mensaje = f"Hay un total de {contador_2} numeros primos entr el 1 y {numero_ingresado}"
+        print(mensaje)
+
+        
+        
+        #alert("Ej 8" , f"""Los numeros primos entre el 1 y el {numero_ingresado} son: {contador}""")
+                    
+                        
+                  
+                   
+              
+                
+            
+             
+                
+               
+                        
+                       
+
+
+
 if __name__ == "__main__":
     app = App()
     app.geometry("300x300")
