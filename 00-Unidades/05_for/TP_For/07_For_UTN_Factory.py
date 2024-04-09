@@ -46,8 +46,48 @@ class App(customtkinter.CTk):
         self.btn_validar.grid(row=4, pady=20, columnspan=2, sticky="nsew")
 
     def btn_validar_on_click(self):
-        nombre = prompt("" , "Ingrese su edad")
         
+        for _ in range (10):
+            
+            nombre = prompt("" , "Ingrese su nombre")
+
+            edad =  prompt("" , "Ingrese su edad")
+            edad = int(edad)
+            if edad < 18:
+                edad =  prompt("" , "Ingrese su edad")
+                edad = int(edad)
+
+            genero = prompt("" , "Ingrese su genero (F - M - NB)")
+            if genero != "F" and genero != "M" and genero != "NB":
+                genero = prompt("" , "Ingrese su genero (F - M - NB)")
+                genero = genero.upper()
+                
+            tecnologia = prompt("" , "Ingrese el lenguaje (PYTHON - JS - ASP.NET)")
+            if tecnologia != "PYHTON" and tecnologia != "JS" and tecnologia != "ASP.NET":
+                tecnologia = prompt("" , "Ingrese el lenguaje (PYTHON - JS - ASP.NET)")
+            tecnologia = tecnologia.upper()
+
+
+            puesto = prompt("" , "Ingrese su puesto (Jr - Ssr - Sr)")
+            puesto = puesto.upper()
+
+
+            if puesto != "JR" and puesto != "SSR" and puesto != "SR":
+                puesto = prompt("" , "Ingrese su puesto (Jr - Ssr - Sr)")
+            puesto = puesto.upper()
+
+
+            #Nombre del postulante Jr con menor edad.
+            if bandera_primer_numero == False and puesto == "JR":
+                maximo = edad
+                
+                bandera_primer_numero = True
+            else:
+                if edad < maximo:
+                    maximo = edad
+
+
+
 
 
 '''
